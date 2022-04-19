@@ -1,6 +1,6 @@
 let widgetSaasShop = {
     idContainer: '.saas_shop_tariffs',
-    pathStyle: './saas_shop_style.css',
+    pathStyle: 'saas_shop_style.css',
     api: (location.host === 'testvm.plotpad.ru') ? 'http://testvm.plotpad.ru:3005' : 'http://localhost:3005',
 
     init: function (idProduct) {
