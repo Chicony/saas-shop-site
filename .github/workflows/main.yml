@@ -20,5 +20,5 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         script: |
             cd /home/student/compose
-            rm -R -y saas-shop-site
+            rm -R saas-shop-site
             git clone https://github.com/Chicony/saas-shop-site
