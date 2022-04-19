@@ -1,5 +1,5 @@
 let widgetSaasShop = {
-    idContainer: 'widgetSaasShop',
+    idContainer: '.saas_shop_tariffs',
     pathStyle: './saas_shop_style.css',
     api: (location.host === 'testvm.plotpad.ru') ? 'http://testvm.plotpad.ru:3005' : 'http://localhost:3005',
 
@@ -17,7 +17,7 @@ let widgetSaasShop = {
             .then((data) => {
                 //console.log(data)
                 let tariffArr = data.tariffs;
-                if (document.getElementById(this.idContainer)) {
+                if (document.querySelector(this.idContainer)) {
                     this.addStyle();
                     this.widgetCreation(tariffArr);
                 } else {
@@ -38,7 +38,7 @@ let widgetSaasShop = {
     },
 
     widgetCreation: function (tariffArr) {
-        let widgetBox = document.getElementById(this.idContainer);
+        let widgetBox = document.querySelector(this.idContainer);
         let arrayLength = {
             length: 0,
             description: [],
