@@ -20,5 +20,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         script: |
             cd /home/student/compose
+            docker-compose down
             rm -R saas-shop-site
             git clone https://github.com/Chicony/saas-shop-site
+            docker-compose up -d
