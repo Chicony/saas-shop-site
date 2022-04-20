@@ -183,10 +183,10 @@ let widgetSaasShop = {
                     {
                         if (period.checked)
                         {
-                            return `http://testvm.plotpad.ru:8080/account/workspace?tariff_variant_id=${el.tariff_variants[1].id}&licenses_count=${count}`
+                            return `http://testvm.plotpad.ru/account/#/workspace?tariff_variant_id=${el.tariff_variants[1].id}&licenses_count=${count}`
                         }
                         else{
-                            return `http://testvm.plotpad.ru:8080/account/workspace?tariff_variant_id=${el.tariff_variants[0].id}&licenses_count=${count}`
+                            return `http://testvm.plotpad.ru/account/#/workspace?tariff_variant_id=${el.tariff_variants[0].id}&licenses_count=${count}`
                         }
                     }
                 }
