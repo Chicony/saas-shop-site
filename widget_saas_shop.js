@@ -2,6 +2,7 @@ let widgetSaasShop = {
     idContainer: '.saas_shop_tariffs',
     pathStyle: 'saas_shop_style.css',
     api: (location.host === 'testvm.plotpad.ru') ? 'http://testvm.plotpad.ru:3005' : 'http://localhost:3005',
+    redirectUrl: (location.host === 'testvm.plotpad.ru') ? 'http://testvm.plotpad.ru/account' : 'http://localhost/account',
 
     init: function (idProduct) {
         fetch(this.api + '/api/products/' + idProduct + '?populate[0]=tariffs.tariff_variants')
@@ -38,6 +39,7 @@ let widgetSaasShop = {
     },
 
     widgetCreation: function (tariffArr) {
+        let obj = this
         let widgetBox = document.querySelector(this.idContainer);
         let arrayLength = {
             length: 0,
@@ -183,10 +185,10 @@ let widgetSaasShop = {
                     {
                         if (period.checked)
                         {
-                            return `http://testvm.plotpad.ru/account/#/workspace?tariff_variant_id=${el.tariff_variants[1].id}&licenses_count=${count}`
+                            return obj.redirectUrl + `/#/workspace?tariff_variant_id=${el.tariff_variants[1].id}&licenses_count=${count}`
                         }
                         else{
-                            return `http://testvm.plotpad.ru/account/#/workspace?tariff_variant_id=${el.tariff_variants[0].id}&licenses_count=${count}`
+                            return obj.redirectUrl + `/#/workspace?tariff_variant_id=${el.tariff_variants[0].id}&licenses_count=${count}`
                         }
                     }
                 }
